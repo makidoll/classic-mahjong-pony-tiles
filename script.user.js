@@ -24,21 +24,17 @@ global.Worker = class MockWorker extends OriginalWorker {
 	}
 
 	postMessage(...args) {
-		if (!Array.isArray(args)) {
+		if (
+			args.length == 0 ||
+			typeof args[0] != "object" ||
+			args[0].id != "loadImageBitmap"
+		) {
 			return super.postMessage(...args);
 		}
 
-		for (let i = 0; i < args.length; i++) {
-			if (typeof args[i] != "object") continue;
-			if (args[i].id != "loadImageBitmap") continue;
-			if (!Array.isArray(args[i].data)) continue;
-
-			for (let j = 0; j < args[i].data.length; j++) {
-				if (typeof args[i].data[j] != "string") continue;
-				if (!args[i].data[j].endsWith("modern/atlas-@2x.png")) continue;
-
-				args[i].data[j] = ponyAtlasImageUrl;
-			}
+		for (let i = 0; i < args[0].data.length; i++) {
+			if (!args[0].data[i].endsWith("modern/atlas-@2x.png")) continue;
+			args[0].data[i] = ponyAtlasImageUrl;
 		}
 
 		return super.postMessage(...args);
