@@ -3,7 +3,7 @@
 // @namespace   https://maki.cafe
 // @match       https://classic-mahjong.com/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Maki
 // @description Pony themed tiles for https://classic-mahjong.com
 // @homepageURL https://github.com/makidoll/classic-mahjong-pony-tiles
