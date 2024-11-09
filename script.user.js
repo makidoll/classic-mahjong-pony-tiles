@@ -8,6 +8,7 @@
 // @description Pony themed tiles for https://classic-mahjong.com
 // @homepageURL https://github.com/makidoll/classic-mahjong-pony-tiles
 // @icon https://raw.githubusercontent.com/makidoll/classic-mahjong-pony-tiles/refs/heads/main/icon.png
+// @downloadURL https://raw.githubusercontent.com/makidoll/classic-mahjong-pony-tiles/refs/heads/main/script.user.js
 // ==/UserScript==
 
 const ponyAtlasImageUrl =
